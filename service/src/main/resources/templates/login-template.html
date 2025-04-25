@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header>
+<!--    <p class="error-message" th:if= "${errorMessage != null}" th:text="${errorMessage}"></p>-->
+    <div id="modal" class="modal show" th:if= "${errorMessage != null}">
+        <div class="modal-content">
+            <h1 class="modal-title" th:text="#{modalTitle}">Error</h1>
+            <hr class="modal-divider">
+            <p class="modal-message" th:text="${errorMessage}">Login failed</p>
+            <button class="modal-button" onclick="closeModal()" th:text="#{closeModal}">Close</button>
+        </div>
+    </div>
+    <div class="navigation-bar">
+        <div class="navigation-links">
+            <a class="navigation-link" th:text="#{data}"></a>
+            <a class="navigation-link" th:text="#{provider}"></a>
+            <div class="language-component">
+                <div class="display-language-component navigation-link">
+                    <span id="display-language" th:text="#{displayLanguage}">
+                </div>
+                <ul class="locale-list">
+                    <li id="Deutsch" class="locale">Deutsch</li>
+                    <li id="English" class="locale">English</li>
+                    <li id="Français" class="locale">Français</li>
+                    <li id="Русский" class="locale">Русский</li>
+                    <li id="Slovensky" class="locale">Slovensky</li>
+                </ul>
+            </div>
+        </div>
+        <!--div class="mobile-header">
+            <h1 th:text="#{title}">Welcome to Gaia-X</h1>
+            <p th:text="#{subtitle}">Sign in to continue</p>
+        </div-->
+    </div>
+</header>
+<main>
+    <div class="card">
+        <div class="card-top">
+            <h1 th:text="#{title}">Welcome to Gaia-X</h1>
+            <p th:text="#{subtitle}">Sign in to continue</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-bottom">
+            <div class="card-bottom-contents">
+                <h2 id="greeting" th:text="#{qrTitle}">Scan the QR code with your mobile device</h2>
+                <img th:src="${qrUrl}" alt="QR Code">
+                <form id="login" th:action="@{/login}" method="post">
+                    <table>
+                        <tr>
+                            <td><input class="input-box" type='hidden' name='username' th:value='${requestId}'/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="input-box" type='hidden' name='password' th:value='${clientId}'/></td>
+                        </tr>
+                        <tr>
+                            <td><input id="sign-in-button" class="action_button" name="qr-smartphone-button" type="button"
+                                onclick="openApp(this)" th:urlarg='${mobileUrl}' th:value="#{scanWithPcm}"/></td>
+                        </tr>
+                        <!--tr>
+                            <td><input id="scan-qr-browser-button" class="action_button" name="qr-browser-button" type="button"
+                                       th:value="#{scanWithBrowser}"/></td>
+                        </tr-->
+                        <!--tr>
+                            <td><input id="back-to-standard-login-button" class="action_button bottom-button" name="back" onclick="history.back()"
+                                       type="button" th:value="#{faq}"/></td>
+                        </tr-->
+                    </table>
+                </form>
+                <p class="account-registration" th:text="#{noAccount}"></p>
+                <a class="account-registration-link" th:text="#{register}"></a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="application/javascript" th:src="@{/js/translate.js}"></script>
+<script type="application/javascript" th:src="@{/js/modal.js}"></script>
+<script type="application/javascript">
+    async function openApp(element) {
+        try {
+            window.open(element.getAttribute("urlarg"), '_blank').focus();
+        } catch (err) {
+            console.log(err);
+        }
+    }
+</script>
+<script type="application/javascript">
+   const interval = window.setInterval(async function submitForm() {
+           try {
+               const response = await fetch(window.location.origin + "/ssi/login/status", { credentials: 'same-origin' });
+               if (response.status == 302) {
+                 clearInterval(interval);
+                 document.forms["login"].submit()           
+               }
+               //if (response.status == 502) { 
+            	 //present login_rejected error..
+               //  clearInterval(interval);
+               //  document.forms["login"].submit()           
+               //}
+               //if (response.status == 504) { 
+            	 //present login_timedout error..
+               //  clearInterval(interval);
+               //  document.forms["login"].submit()           
+               //}
+           } catch (err) {
+               console.log(err);
+           }
+       }, 5000);
+</script>
+
+<footer>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+        <!--p class="copyright">� 2022 T-Systems International GmbH</p-->
+        <div class="bottom-nav-bar">
+            <a th:text="#{imprint}"></a>
+            <a th:text="#{privacyPolicy}"></a>
+            <a th:text="#{cookies}"></a>
+            <a th:text="#{terms}"></a>
+            <a th:text="#{contact}"></a>
+            <a th:text="#{help}"></a>
+        </div>
+    </div>
+    <div class="footer-end-of-page">
+        <p th:text="#{footnote}"></p>
+    </div>    
+</footer>
+</body>
+</html>

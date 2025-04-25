@@ -1,0 +1,23 @@
+server:
+  port: 9000
+        
+aas:
+  iam:
+    base-uri: https://localhost.emobix.co.uk:8443
+    iat:
+      dcr-uri: /realms/gaia-x/clients-registrations/openid-connect 
+      secret: "{noop}iat"
+    clients:
+      oidc:
+        id: aas-app-oidc
+        secret: "{noop}secret"
+        redirect-uris: 
+           - ${aas.iam.base-uri}/test/a/aas-test/callback
+      siop:
+        id: aas-app-siop
+        secret: "{noop}secret2"
+        redirect-uris: 
+           - ${aas.iam.base-uri}/test/a/aas-test/callback
+  oidc:
+    issuer: http://auth-server:9000
+        

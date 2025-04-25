@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ template "app.name" . }}"
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      {{- include "app.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "app.labels" . | nindent 8 }}
+      annotations:
+{{- if .Values.podAnnotations }}
+{{ toYaml .Values.podAnnotations | indent 8 }}
+{{- end }}
+    spec:
+      imagePullSecrets:
+      {{- if .Values.image.pullSecrets }}
+        - name: {{ .Values.image.pullSecrets }}
+      {{- end }}
+      containers:
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ default .Chart.AppVersion .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+            env:
+              - name: SPRING_PROFILES_ACTIVE
+                value: {{ .Values.config.profile | quote }}
+            {{- if not .Values.externalSecrets }}
+              - name: AAS_IAM_IAT_SECRET
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ include "app.fullname" . }}-auth-server-keys-secret
+                    key: iat
+              - name: AAS_IAM_CLIENTS_OIDC_SECRET
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ include "app.fullname" . }}-auth-server-oidc-secret
+                    key: password
+              - name: AAS_IAM_CLIENTS_SIOP_SECRET
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ include "app.fullname" . }}-auth-server-siop-secret
+                    key: password
+              - name: AAS_JWK_SECRET
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ include "app.fullname" . }}-auth-server-keys-secret
+                    key: jwk
+            {{- end }}
+              - name: SPRING_APPLICATION_JSON
+                valueFrom:
+                  configMapKeyRef:
+                    name: {{ include "app.fullname" . }}-spring-config
+                    key: application.json
+            {{- range $key, $value := .Values.env }}
+              - name: "{{ $key }}"
+                value: "{{ $value }}"
+            {{- end }}
+            {{- if .Values.secretEnv }}
+            {{- range $key, $value := .Values.secretEnv }}
+              - name: "{{ $key }}"
+                valueFrom:
+                  secretKeyRef:
+                    name: "{{ $value.name }}"
+                    key: "{{ $value.key }}"
+            {{- end }}
+            {{- end }}
+            ports:
+              - name: "http"
+                containerPort: {{ .Values.server.http.port }}
+            readinessProbe:
+              httpGet:
+                path: "/actuator/health"
+                port: {{ .Values.server.http.port }}
+              initialDelaySeconds: 60
+              periodSeconds: 30
+            {{- if .Values.resources }}
+            resources:
+              {{- toYaml .Values.resources | nindent 14 }}
+            {{- end }}
+      restartPolicy: Always

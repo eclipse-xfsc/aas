@@ -1,0 +1,1182 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.0)
+
+2022-07-27 06:56:29.959  INFO 1 --- [main] e.gaiax.difs.aas.AuthServiceApplication  : Starting AuthServiceApplication using Java 11.0.15 on auth-server-6dbb757f7d-6kdnc with PID 1 (/app/classes started by root in /)
+2022-07-27 06:56:29.961 DEBUG 1 --- [main] e.gaiax.difs.aas.AuthServiceApplication  : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-07-27 06:56:29.962  INFO 1 --- [main] e.gaiax.difs.aas.AuthServiceApplication  : The following 1 profile is active: "test"
+2022-07-27 06:56:32.266  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-07-27 06:56:32.714  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-27 06:56:32.714  INFO 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-27 06:56:32.910  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-27 06:56:32.911  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2873 ms
+2022-07-27 06:56:33.425 DEBUG 1 --- [main] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2022-07-27 06:56:35.802 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [authenticated] for any request
+2022-07-27 06:56:35.841  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.security.config.annotation.web.configurers.oauth2.server.authorization.OAuth2AuthorizationServerConfigurer$$Lambda$775/0x0000000100621840@50f05307 with [org.springframework.security.web.session.DisableEncodeUrlFilter@9cc0505, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@645d4639, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f1d6a13, org.springframework.security.oauth2.server.authorization.web.ProviderContextFilter@8ee03f5, org.springframework.security.web.header.HeaderWriterFilter@7402c49f, org.springframework.security.web.csrf.CsrfFilter@2444c3df, org.springframework.security.web.authentication.logout.LogoutFilter@30e2016a, eu.gaiax.difs.aas.config.SsiOAuth2ValidationFilter@5ad40184, org.springframework.security.oauth2.server.authorization.web.OAuth2AuthorizationEndpointFilter@3359c3f6, eu.gaiax.difs.aas.config.SsiOidcProviderConfigurationEndpointFilter@3d3b272a, org.springframework.security.oauth2.server.authorization.web.NimbusJwkSetEndpointFilter@45b27ad3, org.springframework.security.oauth2.server.authorization.web.OAuth2AuthorizationServerMetadataEndpointFilter@3f908bc0, org.springframework.security.oauth2.server.authorization.web.OAuth2ClientAuthenticationFilter@422ba9b7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@26cdd4af, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@707f4647, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55c46ec1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3eff6846, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b8a0d03, org.springframework.security.web.session.SessionManagementFilter@2382b2f, org.springframework.security.web.access.ExceptionTranslationFilter@76b05c0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41f7c02d, org.springframework.security.oauth2.server.authorization.web.OAuth2TokenEndpointFilter@54f373d4, org.springframework.security.oauth2.server.authorization.web.OAuth2TokenIntrospectionEndpointFilter@1c53bd49, org.springframework.security.oauth2.server.authorization.web.OAuth2TokenRevocationEndpointFilter@16949dfa, eu.gaiax.difs.aas.config.SsiOidcUserInfoEndpointFilter@d6d683e]
+2022-07-27 06:56:35.873 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/api/**']
+2022-07-27 06:56:35.873 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/swagger-ui/**']
+2022-07-27 06:56:35.873 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/actuator']
+2022-07-27 06:56:35.873 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/actuator/**']
+2022-07-27 06:56:35.873 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/**/*.{js,html,css}']
+2022-07-27 06:56:35.874 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/.well-known/**']
+2022-07-27 06:56:35.874 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/cip/**']
+2022-07-27 06:56:35.874 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/clients/**']
+2022-07-27 06:56:35.874 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/ssi/**']
+2022-07-27 06:56:35.874 DEBUG 1 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression [authenticated] for any request
+2022-07-27 06:56:35.875  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1d9bd1d6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18ac4af6, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ad8d36f, org.springframework.security.web.header.HeaderWriterFilter@2f166d61, org.springframework.security.web.authentication.logout.LogoutFilter@5034681f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e2772a9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@570ed9c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@117fb9ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74a5bef0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68c4a860, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b1d1a5, org.springframework.security.web.session.SessionManagementFilter@5896b9f5, org.springframework.security.web.access.ExceptionTranslationFilter@7fb82f73, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1592e540]
+2022-07-27 06:56:36.405 DEBUG 1 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-07-27 06:56:36.512 DEBUG 1 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2022-07-27 06:56:37.223 DEBUG 1 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2022-07-27 06:56:37.232 DEBUG 1 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-07-27 06:56:37.453  INFO 1 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-07-27 06:56:37.502  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-07-27 06:56:37.519  INFO 1 --- [main] e.gaiax.difs.aas.AuthServiceApplication  : Started AuthServiceApplication in 8.505 seconds (JVM running for 9.355)
+2022-07-27 06:56:37.531  INFO 1 --- [main] e.gaiax.difs.aas.AuthServiceApplication  : env variables: {awt.toolkit=sun.awt.X11.XToolkit, java.specification.version=11, sun.cpu.isalist=, sun.jnu.encoding=UTF-8, java.class.path=/app/resources:/app/classes:/app/libs/spring-boot-starter-2.7.0.jar:/app/libs/spring-boot-2.7.0.jar:/app/libs/spring-boot-autoconfigure-2.7.0.jar:/app/libs/spring-boot-starter-logging-2.7.0.jar:/app/libs/logback-classic-1.2.11.jar:/app/libs/logback-core-1.2.11.jar:/app/libs/log4j-to-slf4j-2.17.2.jar:/app/libs/log4j-api-2.17.2.jar:/app/libs/jul-to-slf4j-1.7.36.jar:/app/libs/jakarta.annotation-api-1.3.5.jar:/app/libs/spring-core-5.3.20.jar:/app/libs/spring-jcl-5.3.20.jar:/app/libs/snakeyaml-1.30.jar:/app/libs/spring-boot-starter-actuator-2.7.0.jar:/app/libs/spring-boot-actuator-autoconfigure-2.7.0.jar:/app/libs/spring-boot-actuator-2.7.0.jar:/app/libs/jackson-datatype-jsr310-2.13.3.jar:/app/libs/micrometer-core-1.9.0.jar:/app/libs/HdrHistogram-2.1.12.jar:/app/libs/LatencyUtils-2.0.3.jar:/app/libs/spring-boot-starter-security-2.7.0.jar:/app/libs/spring-aop-5.3.20.jar:/app/libs/spring-security-config-5.7.1.jar:/app/libs/spring-boot-starter-tomcat-2.7.0.jar:/app/libs/tomcat-embed-core-9.0.63.jar:/app/libs/tomcat-embed-el-9.0.63.jar:/app/libs/tomcat-embed-websocket-9.0.63.jar:/app/libs/spring-boot-starter-validation-2.7.0.jar:/app/libs/hibernate-validator-6.2.3.Final.jar:/app/libs/jakarta.validation-api-2.0.2.jar:/app/libs/jboss-logging-3.4.3.Final.jar:/app/libs/classmate-1.5.1.jar:/app/libs/spring-boot-starter-web-2.7.0.jar:/app/libs/spring-boot-starter-json-2.7.0.jar:/app/libs/jackson-datatype-jdk8-2.13.3.jar:/app/libs/jackson-module-parameter-names-2.13.3.jar:/app/libs/spring-web-5.3.20.jar:/app/libs/spring-webmvc-5.3.20.jar:/app/libs/spring-boot-starter-webflux-2.7.0.jar:/app/libs/spring-boot-starter-reactor-netty-2.7.0.jar:/app/libs/reactor-netty-http-1.0.19.jar:/app/libs/netty-codec-http-4.1.77.Final.jar:/app/libs/netty-common-4.1.77.Final.jar:/app/libs/netty-buffer-4.1.77.Final.jar:/app/libs/netty-transport-4.1.77.Final.jar:/app/libs/netty-codec-4.1.77.Final.jar:/app/libs/netty-handler-4.1.77.Final.jar:/app/libs/netty-codec-http2-4.1.77.Final.jar:/app/libs/netty-resolver-dns-4.1.77.Final.jar:/app/libs/netty-resolver-4.1.77.Final.jar:/app/libs/netty-codec-dns-4.1.77.Final.jar:/app/libs/netty-resolver-dns-native-macos-4.1.77.Final-osx-x86_64.jar:/app/libs/netty-resolver-dns-classes-macos-4.1.77.Final.jar:/app/libs/netty-transport-native-epoll-4.1.77.Final-linux-x86_64.jar:/app/libs/netty-transport-native-unix-common-4.1.77.Final.jar:/app/libs/netty-transport-classes-epoll-4.1.77.Final.jar:/app/libs/reactor-netty-core-1.0.19.jar:/app/libs/netty-handler-proxy-4.1.77.Final.jar:/app/libs/netty-codec-socks-4.1.77.Final.jar:/app/libs/spring-webflux-5.3.20.jar:/app/libs/reactor-core-3.4.18.jar:/app/libs/reactive-streams-1.0.3.jar:/app/libs/slf4j-api-1.7.36.jar:/app/libs/jakarta.xml.bind-api-2.3.3.jar:/app/libs/jakarta.activation-api-1.2.2.jar:/app/libs/spring-boot-starter-thymeleaf-2.7.0.jar:/app/libs/thymeleaf-spring5-3.0.15.RELEASE.jar:/app/libs/thymeleaf-3.0.15.RELEASE.jar:/app/libs/attoparser-2.0.5.RELEASE.jar:/app/libs/unbescape-1.1.6.RELEASE.jar:/app/libs/thymeleaf-extras-java8time-3.0.4.RELEASE.jar:/app/libs/spring-security-oauth2-authorization-server-0.3.1.jar:/app/libs/spring-security-oauth2-core-5.7.1.jar:/app/libs/spring-security-oauth2-jose-5.7.1.jar:/app/libs/spring-security-oauth2-resource-server-5.7.1.jar:/app/libs/nimbus-jose-jwt-9.22.jar:/app/libs/jcip-annotations-1.0-1.jar:/app/libs/jackson-databind-2.13.3.jar:/app/libs/jackson-annotations-2.13.3.jar:/app/libs/jackson-core-2.13.3.jar:/app/libs/spring-security-web-5.7.2.jar:/app/libs/spring-security-core-5.7.1.jar:/app/libs/spring-security-crypto-5.7.1.jar:/app/libs/spring-beans-5.3.20.jar:/app/libs/spring-context-5.3.20.jar:/app/libs/spring-expression-5.3.20.jar:/app/libs/springdoc-openapi-ui-1.6.8.jar:/app/libs/springdoc-openapi-webmvc-core-1.6.8.jar:/app/libs/springdoc-openapi-common-1.6.8.jar:/app/libs/swagger-core-2.2.0.jar:/app/libs/commons-lang3-3.12.0.jar:/app/libs/jackson-dataformat-yaml-2.13.3.jar:/app/libs/swagger-annotations-2.2.0.jar:/app/libs/swagger-models-2.2.0.jar:/app/libs/swagger-ui-4.10.3.jar:/app/libs/webjars-locator-core-0.50.jar:/app/libs/classgraph-4.8.143.jar:/app/libs/micrometer-registry-prometheus-1.9.0.jar:/app/libs/simpleclient_common-0.15.0.jar:/app/libs/simpleclient-0.15.0.jar:/app/libs/simpleclient_tracer_otel-0.15.0.jar:/app/libs/simpleclient_tracer_common-0.15.0.jar:/app/libs/simpleclient_tracer_otel_agent-0.15.0.jar:/app/libs/core-3.5.0.jar:/app/libs/javase-3.5.0.jar:/app/libs/jcommander-1.82.jar:/app/libs/jai-imageio-core-1.4.0.jar:/app/libs/caffeine-3.1.1.jar:/app/libs/checker-qual-3.22.0.jar:/app/libs/error_prone_annotations-2.14.0.jar, java.vm.vendor=Eclipse Adoptium, sun.arch.data.model=64, java.vendor.url=https://adoptium.net/, catalina.useNaming=false, user.timezone=Etc/UTC, os.name=Linux, java.vm.specification.version=11, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=/opt/java/openjdk/lib, sun.java.command=eu.gaiax.difs.aas.AuthServiceApplication, jdk.debug=release, sun.cpu.endian=little, user.home=/root, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2022-04-19, java.home=/opt/java/openjdk, file.separator=/, java.vm.compressedOopsMode=32-bit, line.separator=
+, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, FILE_LOG_CHARSET=UTF-8, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, java.awt.headless=true, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=11.0.15+10, user.name=root, path.separator=:, os.version=5.4.0-109-generic, java.runtime.name=OpenJDK Runtime Environment, file.encoding=UTF-8, spring.beaninfo.ignore=true, java.vm.name=OpenJDK 64-Bit Server VM, java.vendor.version=Temurin-11.0.15+10, java.vendor.url.bug=https://github.com/adoptium/adoptium-support/issues, java.io.tmpdir=/tmp, catalina.home=/tmp/tomcat.9000.1209668176373056480, java.version=11.0.15, user.dir=/, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, PID=1, java.awt.printerjob=sun.print.PSPrinterJob, sun.os.patch.level=unknown, CONSOLE_LOG_CHARSET=UTF-8, catalina.base=/tmp/tomcat.9000.1209668176373056480, java.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, java.vm.info=mixed mode, java.vendor=Eclipse Adoptium, java.vm.version=11.0.15+10, sun.io.unicode.encoding=UnicodeLittle, java.class.version=55.0}
+2022-07-27 06:57:35.628  INFO 1 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-27 06:57:35.629  INFO 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-27 06:57:35.629 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-07-27 06:57:35.629 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected SessionLocaleResolver
+2022-07-27 06:57:35.629 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-07-27 06:57:35.630 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@578f2ba2
+2022-07-27 06:57:35.631 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@72f897cb
+2022-07-27 06:57:35.631 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-07-27 06:57:35.631  INFO 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-07-27 06:57:35.639 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 06:57:35.643 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:57:35.645 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:57:35.648 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 06:57:35.648 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 06:57:35.650 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 06:57:35.679 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 06:57:35.711 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@215ec25a]
+2022-07-27 06:57:35.724 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:57:35.727 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:57:35.728 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:57:35.728 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:57:54.159 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 06:57:54.160 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:57:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:57:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 06:57:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 06:57:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 06:57:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 06:57:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3550beb1]
+2022-07-27 06:57:54.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:57:54.163 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:57:54.163 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:57:54.163 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:58:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 06:58:24.160 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:58:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:58:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 06:58:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 06:58:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 06:58:24.165 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 06:58:24.165 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@622138c1]
+2022-07-27 06:58:24.166 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:58:24.166 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:58:24.166 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:58:24.166 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:58:34.317 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /clients/iat/requests
+2022-07-27 06:58:34.318 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:58:34.318 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:58:34.325 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /clients/iat/requests] with attributes [permitAll]
+2022-07-27 06:58:34.325 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /clients/iat/requests
+2022-07-27 06:58:34.325 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/clients/iat/requests", parameters={}
+2022-07-27 06:58:34.326 DEBUG 1 --- [http-nio-9000-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#postAccessRequest(AccessRequestDto)
+2022-07-27 06:58:34.377 DEBUG 1 --- [http-nio-9000-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class AccessRequestDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did: (truncated)...]
+2022-07-27 06:58:34.437 DEBUG 1 --- [http-nio-9000-exec-4] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofInvitation.enter; got request: class AccessRequestDto {
+    subject: aas-app
+    entity: class ServiceAccessScopeDto {
+        did: didsuper_string
+        scope: scope_string
+    }
+}
+2022-07-27 06:58:34.442 DEBUG 1 --- [http-nio-9000-exec-4] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofInvitation.exit; returning: class AccessResponseDto {
+    subject: aas-app
+    entity: class ServiceAccessScopeDto {
+        did: didsuper_string
+        scope: scope_string
+    }
+    requestId: 4869ea7d-3433-4958-a45d-46a395ca6175
+    status: pending
+    policyEvaluationResult: null
+    initialAccessToken: null
+}
+2022-07-27 06:58:34.444 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 06:58:34.449 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 06:58:34.451 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:58:34.452 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:58:34.453 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:58:34.453 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:58:54.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 06:58:54.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:58:54.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:58:54.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 06:58:54.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 06:58:54.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 06:58:54.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 06:58:54.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@772a76fa]
+2022-07-27 06:58:54.163 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:58:54.163 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:58:54.163 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:58:54.163 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:59:18.675 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175
+2022-07-27 06:59:18.675 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:59:18.675 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:59:18.676 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175] with attributes [permitAll]
+2022-07-27 06:59:18.676 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175
+2022-07-27 06:59:18.676 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175", parameters={}
+2022-07-27 06:59:18.678 DEBUG 1 --- [http-nio-9000-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#getAccessRequest(String)
+2022-07-27 06:59:18.680 DEBUG 1 --- [http-nio-9000-exec-6] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.enter; got request: 4869ea7d-3433-4958-a45d-46a395ca6175
+2022-07-27 06:59:18.685 DEBUG 1 --- [http-nio-9000-exec-6] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.exit; returning status: pending
+2022-07-27 06:59:18.686 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 06:59:18.686 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 06:59:18.686 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:18.687 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:59:18.687 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:18.687 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:59:22.144 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175
+2022-07-27 06:59:22.144 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:59:22.144 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:59:22.145 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175] with attributes [permitAll]
+2022-07-27 06:59:22.145 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175
+2022-07-27 06:59:22.145 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/clients/iat/requests/4869ea7d-3433-4958-a45d-46a395ca6175", parameters={}
+2022-07-27 06:59:22.146 DEBUG 1 --- [http-nio-9000-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#getAccessRequest(String)
+2022-07-27 06:59:22.147 DEBUG 1 --- [http-nio-9000-exec-7] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.enter; got request: 4869ea7d-3433-4958-a45d-46a395ca6175
+2022-07-27 06:59:22.147 DEBUG 1 --- [http-nio-9000-exec-7] eu.gaiax.difs.aas.client.IamClient       : registerIam.enter; got clientName: aas-app, redirectUris: [https://auth-server.gxfs.dev/*]
+2022-07-27 06:59:22.216 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.r.f.client.ExchangeFunctions       : [2b5a2de7] HTTP POST http://78.138.66.191:8080/realms/gaia-x/clients-registrations/openid-connect
+2022-07-27 06:59:22.488 DEBUG 1 --- [reactor-http-epoll-2] org.springframework.web.HttpLogging      : [2b5a2de7] Encoding [{grant_types=[authorization_code], redirect_uris=[https://auth-server.gxfs.dev/*], client_name=aas-a (truncated)...]
+2022-07-27 06:59:22.584 DEBUG 1 --- [reactor-http-epoll-2] o.s.w.r.f.client.ExchangeFunctions       : [2b5a2de7] [640ecc44-1] Response 201 CREATED
+2022-07-27 06:59:22.613 DEBUG 1 --- [reactor-http-epoll-2] org.springframework.web.HttpLogging      : [2b5a2de7] [640ecc44-1] Decoded [{redirect_uris=[https://auth-server.gxfs.dev/*], token_endpoint_auth_method=client_secret_basic, gra (truncated)...]
+2022-07-27 06:59:22.614 DEBUG 1 --- [reactor-http-epoll-2] o.s.w.r.f.client.ExchangeFunctions       : [2b5a2de7] Cancel signal (to close connection)
+2022-07-27 06:59:22.620 DEBUG 1 --- [http-nio-9000-exec-7] eu.gaiax.difs.aas.client.IamClient       : registerIam.exit; returning: 17
+2022-07-27 06:59:22.620 DEBUG 1 --- [http-nio-9000-exec-7] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.exit; returning status: accepted
+2022-07-27 06:59:22.621 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 06:59:22.621 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 06:59:22.622 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:22.622 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:59:22.622 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:22.623 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:59:24.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 06:59:24.160 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:59:24.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:59:24.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 06:59:24.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 06:59:24.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 06:59:24.163 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 06:59:24.163 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@5b5bf4c4]
+2022-07-27 06:59:24.163 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:24.164 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:59:24.164 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:24.164 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 06:59:54.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 06:59:54.160 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 06:59:54.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 06:59:54.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 06:59:54.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 06:59:54.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 06:59:54.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 06:59:54.163 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@96adc81]
+2022-07-27 06:59:54.163 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:54.163 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 06:59:54.164 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 06:59:54.164 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:00:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:00:24.163 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:00:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:00:24.166 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:00:24.166 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:00:24.166 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:00:24.167 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:00:24.172 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@434ed2b2]
+2022-07-27 07:00:24.173 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:00:24.175 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:00:24.176 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:00:24.176 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:00:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:00:54.161 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:00:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:00:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:00:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:00:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:00:54.163 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:00:54.163 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@7aaa4c50]
+2022-07-27 07:00:54.164 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:00:54.164 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:00:54.164 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:00:54.164 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:01:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:01:24.161 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:01:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:01:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:01:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:01:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:01:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:01:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@6ce6caf5]
+2022-07-27 07:01:24.163 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:01:24.163 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:01:24.163 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:01:24.163 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:01:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:01:54.159 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:01:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:01:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:01:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:01:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:01:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:01:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@235154f1]
+2022-07-27 07:01:54.161 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:01:54.162 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:01:54.162 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:01:54.162 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:02:24.159 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:02:24.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:02:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:02:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:02:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:02:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:02:24.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:02:24.164 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@79ed966f]
+2022-07-27 07:02:24.168 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:02:24.169 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:02:24.169 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:02:24.169 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:02:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:02:54.160 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:02:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:02:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:02:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:02:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:02:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:02:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@6fba5ec9]
+2022-07-27 07:02:54.162 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:02:54.167 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:02:54.167 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:02:54.167 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:03:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:03:24.160 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:03:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:03:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:03:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:03:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:03:24.163 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:03:24.163 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@6980053e]
+2022-07-27 07:03:24.163 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:03:24.163 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:03:24.164 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:03:24.164 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:03:54.159 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:03:54.160 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:03:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:03:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:03:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:03:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:03:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:03:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@559c11df]
+2022-07-27 07:03:54.162 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:03:54.168 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:03:54.169 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:03:54.169 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:04:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:04:24.160 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:04:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:04:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:04:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:04:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:04:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:04:24.163 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@7ad23dc]
+2022-07-27 07:04:24.163 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:04:24.164 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:04:24.164 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:04:24.164 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:04:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:04:54.166 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:04:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:04:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:04:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:04:54.167 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:04:54.168 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:04:54.168 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@71e56f12]
+2022-07-27 07:04:54.169 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:04:54.170 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:04:54.170 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:04:54.170 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:05:00.702 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /clients/iat/requests
+2022-07-27 07:05:00.702 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:05:00.702 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:05:00.703 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /clients/iat/requests] with attributes [permitAll]
+2022-07-27 07:05:00.703 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /clients/iat/requests
+2022-07-27 07:05:00.703 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/clients/iat/requests", parameters={}
+2022-07-27 07:05:00.704 DEBUG 1 --- [http-nio-9000-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#postAccessRequest(AccessRequestDto)
+2022-07-27 07:05:00.705 DEBUG 1 --- [http-nio-9000-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class AccessRequestDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did: (truncated)...]
+2022-07-27 07:05:00.707 DEBUG 1 --- [http-nio-9000-exec-1] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofInvitation.enter; got request: class AccessRequestDto {
+    subject: aas-app
+    entity: class ServiceAccessScopeDto {
+        did: didsuper_string
+        scope: scope_string
+    }
+}
+2022-07-27 07:05:00.707 DEBUG 1 --- [http-nio-9000-exec-1] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofInvitation.exit; returning: class AccessResponseDto {
+    subject: aas-app
+    entity: class ServiceAccessScopeDto {
+        did: didsuper_string
+        scope: scope_string
+    }
+    requestId: c784df0c-70ee-4099-9c55-5035cc843279
+    status: pending
+    policyEvaluationResult: null
+    initialAccessToken: null
+}
+2022-07-27 07:05:00.708 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 07:05:00.708 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 07:05:00.709 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:00.709 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:05:00.713 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:00.714 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:05:10.048 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279
+2022-07-27 07:05:10.048 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:05:10.048 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:05:10.049 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279] with attributes [permitAll]
+2022-07-27 07:05:10.049 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279
+2022-07-27 07:05:10.049 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279", parameters={}
+2022-07-27 07:05:10.050 DEBUG 1 --- [http-nio-9000-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#getAccessRequest(String)
+2022-07-27 07:05:10.051 DEBUG 1 --- [http-nio-9000-exec-2] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.enter; got request: c784df0c-70ee-4099-9c55-5035cc843279
+2022-07-27 07:05:10.051 DEBUG 1 --- [http-nio-9000-exec-2] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.exit; returning status: pending
+2022-07-27 07:05:10.051 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 07:05:10.051 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 07:05:10.052 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:10.053 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:05:10.053 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:10.053 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:05:11.457 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279
+2022-07-27 07:05:11.458 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:05:11.458 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:05:11.458 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279] with attributes [permitAll]
+2022-07-27 07:05:11.458 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279
+2022-07-27 07:05:11.458 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/clients/iat/requests/c784df0c-70ee-4099-9c55-5035cc843279", parameters={}
+2022-07-27 07:05:11.459 DEBUG 1 --- [http-nio-9000-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#getAccessRequest(String)
+2022-07-27 07:05:11.459 DEBUG 1 --- [http-nio-9000-exec-3] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.enter; got request: c784df0c-70ee-4099-9c55-5035cc843279
+2022-07-27 07:05:11.460 DEBUG 1 --- [http-nio-9000-exec-3] eu.gaiax.difs.aas.client.IamClient       : registerIam.enter; got clientName: aas-app, redirectUris: [https://auth-server.gxfs.dev/*]
+2022-07-27 07:05:11.460 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.r.f.client.ExchangeFunctions       : [46570284] HTTP POST http://78.138.66.191:8080/realms/gaia-x/clients-registrations/openid-connect
+2022-07-27 07:05:11.465 DEBUG 1 --- [reactor-http-epoll-3] org.springframework.web.HttpLogging      : [46570284] Encoding [{grant_types=[authorization_code], redirect_uris=[https://auth-server.gxfs.dev/*], client_name=aas-a (truncated)...]
+2022-07-27 07:05:11.485 DEBUG 1 --- [reactor-http-epoll-3] o.s.w.r.f.client.ExchangeFunctions       : [46570284] [4fe9029e-1] Response 201 CREATED
+2022-07-27 07:05:11.486 DEBUG 1 --- [reactor-http-epoll-3] org.springframework.web.HttpLogging      : [46570284] [4fe9029e-1] Decoded [{redirect_uris=[https://auth-server.gxfs.dev/*], token_endpoint_auth_method=client_secret_basic, gra (truncated)...]
+2022-07-27 07:05:11.486 DEBUG 1 --- [reactor-http-epoll-3] o.s.w.r.f.client.ExchangeFunctions       : [46570284] Cancel signal (to close connection)
+2022-07-27 07:05:11.487 DEBUG 1 --- [http-nio-9000-exec-3] eu.gaiax.difs.aas.client.IamClient       : registerIam.exit; returning: 17
+2022-07-27 07:05:11.487 DEBUG 1 --- [http-nio-9000-exec-3] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.exit; returning status: accepted
+2022-07-27 07:05:11.487 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 07:05:11.487 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 07:05:11.488 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:11.489 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:05:11.489 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:11.489 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:05:24.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:05:24.161 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:05:24.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:05:24.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:05:24.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:05:24.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:05:24.163 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:05:24.163 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@574ffe3e]
+2022-07-27 07:05:24.163 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:24.177 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:05:24.178 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:24.178 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:05:54.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:05:54.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:05:54.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:05:54.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:05:54.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:05:54.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:05:54.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:05:54.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@7dd21d8a]
+2022-07-27 07:05:54.162 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:54.163 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:05:54.163 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:05:54.163 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:06:24.164 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:06:24.164 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:06:24.164 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:06:24.165 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:06:24.165 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:06:24.165 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:06:24.166 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:06:24.167 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@22c01921]
+2022-07-27 07:06:24.167 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:06:24.167 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:06:24.167 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:06:24.167 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:06:54.159 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:06:54.159 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:06:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:06:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:06:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:06:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:06:54.165 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:06:54.165 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@51a39fb4]
+2022-07-27 07:06:54.166 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:06:54.168 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:06:54.168 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:06:54.169 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:07:24.163 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:07:24.164 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:07:24.164 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:07:24.164 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:07:24.164 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:07:24.164 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:07:24.166 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:07:24.166 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@392b7f1]
+2022-07-27 07:07:24.167 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:07:24.169 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:07:24.169 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:07:24.169 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:07:54.159 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:07:54.159 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:07:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:07:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:07:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:07:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:07:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:07:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@18d0757c]
+2022-07-27 07:07:54.161 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:07:54.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:07:54.162 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:07:54.162 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:08:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:08:24.160 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:08:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:08:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:08:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:08:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:08:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:08:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3eaa9bdc]
+2022-07-27 07:08:24.163 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:08:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:08:24.163 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:08:24.163 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:08:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:08:54.160 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:08:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:08:54.179 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:08:54.180 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:08:54.181 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:08:54.182 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:08:54.183 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@32e5a1df]
+2022-07-27 07:08:54.184 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:08:54.184 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:08:54.185 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:08:54.185 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:09:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:09:24.160 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:09:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:09:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:09:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:09:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:09:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:09:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1c3cc9d9]
+2022-07-27 07:09:24.162 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:09:24.163 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:09:24.163 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:09:24.163 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:09:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:09:54.160 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:09:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:09:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:09:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:09:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:09:54.162 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:09:54.162 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1171d756]
+2022-07-27 07:09:54.162 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:09:54.162 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:09:54.163 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:09:54.163 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:10:24.159 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:10:24.159 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:10:24.159 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:10:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:10:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:10:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:10:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:10:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@38d09c54]
+2022-07-27 07:10:24.161 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:10:24.164 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:10:24.164 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:10:24.164 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:10:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:10:54.160 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:10:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:10:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:10:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:10:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:10:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:10:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@420f6d17]
+2022-07-27 07:10:54.162 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:10:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:10:54.162 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:10:54.162 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:11:24.159 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:11:24.159 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:11:24.159 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:11:24.159 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:11:24.159 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:11:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:11:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:11:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@56e34d54]
+2022-07-27 07:11:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:11:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:11:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:11:24.162 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:11:54.159 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:11:54.159 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:11:54.159 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:11:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:11:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:11:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:11:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:11:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@14a11be4]
+2022-07-27 07:11:54.161 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:11:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:11:54.162 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:11:54.162 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:12:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:12:24.160 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:12:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:12:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:12:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:12:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:12:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:12:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@469029e7]
+2022-07-27 07:12:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:12:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:12:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:12:24.162 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:12:54.159 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:12:54.159 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:12:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:12:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:12:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:12:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:12:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:12:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3d4d15e6]
+2022-07-27 07:12:54.162 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:12:54.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:12:54.162 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:12:54.162 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:13:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:13:24.161 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:13:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:13:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:13:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:13:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:13:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:13:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3984841a]
+2022-07-27 07:13:24.163 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:13:24.168 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:13:24.168 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:13:24.168 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:13:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:13:54.160 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:13:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:13:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:13:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:13:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:13:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:13:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1a85b31f]
+2022-07-27 07:13:54.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:13:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:13:54.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:13:54.162 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:14:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:14:24.160 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:14:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:14:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:14:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:14:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:14:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:14:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3e5a5534]
+2022-07-27 07:14:24.162 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:14:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:14:24.162 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:14:24.162 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:14:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:14:54.159 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:14:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:14:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:14:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:14:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:14:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:14:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@54a59528]
+2022-07-27 07:14:54.161 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:14:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:14:54.161 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:14:54.161 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:15:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:15:24.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:15:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:15:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:15:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:15:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:15:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:15:24.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1ce9a012]
+2022-07-27 07:15:24.162 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:15:24.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:15:24.162 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:15:24.162 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:15:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:15:54.159 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:15:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:15:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:15:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:15:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:15:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:15:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@4d0b70d9]
+2022-07-27 07:15:54.161 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:15:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:15:54.161 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:15:54.161 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:16:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:16:24.160 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:16:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:16:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:16:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:16:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:16:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:16:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@e215553]
+2022-07-27 07:16:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:16:24.168 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:16:24.168 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:16:24.168 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:16:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:16:54.160 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:16:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:16:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:16:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:16:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:16:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:16:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@10583060]
+2022-07-27 07:16:54.162 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:16:54.163 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:16:54.163 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:16:54.163 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:17:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:17:24.160 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:17:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:17:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:17:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:17:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:17:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:17:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@19416b60]
+2022-07-27 07:17:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:17:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:17:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:17:24.162 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:17:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:17:54.160 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:17:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:17:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:17:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:17:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:17:54.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:17:54.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@7fb7db10]
+2022-07-27 07:17:54.162 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:17:54.163 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:17:54.163 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:17:54.163 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:18:24.159 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:18:24.160 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:18:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:18:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:18:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:18:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:18:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:18:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@63ebcd31]
+2022-07-27 07:18:24.162 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:18:24.163 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:18:24.163 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:18:24.163 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:18:54.159 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:18:54.160 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:18:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:18:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:18:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:18:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:18:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:18:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@2e8adb1d]
+2022-07-27 07:18:54.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:18:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:18:54.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:18:54.162 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:19:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:19:24.161 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:19:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:19:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:19:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:19:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:19:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:19:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@4df43f81]
+2022-07-27 07:19:24.162 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:19:24.163 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:19:24.163 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:19:24.163 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:19:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:19:54.160 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:19:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:19:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:19:54.160 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:19:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:19:54.161 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:19:54.162 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@7dfaa591]
+2022-07-27 07:19:54.162 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:19:54.162 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:19:54.162 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:19:54.162 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:20:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:20:24.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:20:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:20:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:20:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:20:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:20:24.165 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:20:24.165 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@9a2030e]
+2022-07-27 07:20:24.166 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:20:24.166 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:20:24.166 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:20:24.166 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:20:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:20:54.160 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:20:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:20:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:20:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:20:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:20:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:20:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@41c8b28c]
+2022-07-27 07:20:54.162 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:20:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:20:54.162 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:20:54.162 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:21:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:21:24.160 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:21:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:21:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:21:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:21:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:21:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:21:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@67e1085c]
+2022-07-27 07:21:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:21:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:21:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:21:24.162 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:21:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:21:54.162 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:21:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:21:54.163 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:21:54.163 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:21:54.163 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:21:54.164 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:21:54.164 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@25ffc95d]
+2022-07-27 07:21:54.165 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:21:54.165 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:21:54.165 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:21:54.165 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:22:24.159 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:22:24.159 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:22:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:22:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:22:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:22:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:22:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:22:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@771c0857]
+2022-07-27 07:22:24.161 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:22:24.168 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:22:24.168 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:22:24.168 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:22:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:22:54.166 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:22:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:22:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:22:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:22:54.166 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:22:54.167 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:22:54.167 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@47aabe7]
+2022-07-27 07:22:54.168 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:22:54.168 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:22:54.169 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:22:54.169 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:23:24.159 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:23:24.159 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:23:24.159 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:23:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:23:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:23:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:23:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:23:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@78c9f77e]
+2022-07-27 07:23:24.161 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:23:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:23:24.161 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:23:24.161 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:23:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:23:54.160 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:23:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:23:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:23:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:23:54.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:23:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:23:54.163 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@36953a1f]
+2022-07-27 07:23:54.163 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:23:54.163 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:23:54.163 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:23:54.164 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:24:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:24:24.161 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:24:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:24:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:24:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:24:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:24:24.163 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:24:24.163 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@33c95799]
+2022-07-27 07:24:24.163 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:24:24.164 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:24:24.164 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:24:24.164 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:24:54.159 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:24:54.161 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:24:54.164 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:24:54.164 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:24:54.165 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:24:54.165 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:24:54.166 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:24:54.166 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@55ec1a1e]
+2022-07-27 07:24:54.166 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:24:54.171 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:24:54.171 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:24:54.172 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:25:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:25:24.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:25:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:25:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:25:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:25:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:25:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:25:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@647161fd]
+2022-07-27 07:25:24.161 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:25:24.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:25:24.162 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:25:24.162 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:25:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:25:54.160 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:25:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:25:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:25:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:25:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:25:54.163 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:25:54.163 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@7c39f06a]
+2022-07-27 07:25:54.163 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:25:54.164 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:25:54.164 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:25:54.164 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:26:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:26:24.160 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:26:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:26:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:26:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:26:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:26:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:26:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@45ca1c90]
+2022-07-27 07:26:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:26:24.162 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:26:24.162 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:26:24.162 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:26:54.159 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:26:54.160 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:26:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:26:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:26:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:26:54.160 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:26:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:26:54.161 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@68ecbc69]
+2022-07-27 07:26:54.161 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:26:54.162 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:26:54.162 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:26:54.162 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:27:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:27:24.160 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:27:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:27:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:27:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:27:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:27:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:27:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@6127147a]
+2022-07-27 07:27:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:27:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:27:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:27:24.162 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:27:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:27:54.160 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:27:54.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:27:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:27:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:27:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:27:54.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:27:54.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1f9a5581]
+2022-07-27 07:27:54.162 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:27:54.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:27:54.162 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:27:54.162 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:28:24.159 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:28:24.160 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:28:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:28:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:28:24.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:28:24.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:28:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:28:24.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1257e7c0]
+2022-07-27 07:28:24.163 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:28:24.164 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:28:24.164 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:28:24.164 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:28:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:28:54.161 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:28:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:28:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:28:54.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:28:54.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:28:54.163 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:28:54.164 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@29e18e4b]
+2022-07-27 07:28:54.164 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:28:54.166 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:28:54.166 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:28:54.166 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:29:24.159 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:29:24.160 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:29:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:29:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:29:24.160 DEBUG 1 --- [http-nio-9000-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:29:24.161 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:29:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:29:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@49412238]
+2022-07-27 07:29:24.162 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:29:24.162 DEBUG 1 --- [http-nio-9000-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:29:24.162 DEBUG 1 --- [http-nio-9000-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:29:24.162 DEBUG 1 --- [http-nio-9000-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:29:54.163 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:29:54.163 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:29:54.163 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:29:54.163 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:29:54.163 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:29:54.164 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:29:54.164 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:29:54.165 DEBUG 1 --- [http-nio-9000-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@4a38ac92]
+2022-07-27 07:29:54.165 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:29:54.166 DEBUG 1 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:29:54.166 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:29:54.166 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:30:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:30:24.160 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:30:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:30:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:30:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:30:24.160 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:30:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:30:24.161 DEBUG 1 --- [http-nio-9000-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@58ff631b]
+2022-07-27 07:30:24.162 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:30:24.162 DEBUG 1 --- [http-nio-9000-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:30:24.162 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:30:24.162 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:30:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:30:54.161 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:30:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:30:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:30:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:30:54.162 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:30:54.163 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:30:54.163 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@45e74d2f]
+2022-07-27 07:30:54.163 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:30:54.164 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:30:54.164 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:30:54.164 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:30:57.836 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /clients/iat/requests
+2022-07-27 07:30:57.836 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:30:57.836 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:30:57.836 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /clients/iat/requests] with attributes [permitAll]
+2022-07-27 07:30:57.836 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /clients/iat/requests
+2022-07-27 07:30:57.836 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/clients/iat/requests", parameters={}
+2022-07-27 07:30:57.837 DEBUG 1 --- [http-nio-9000-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#postAccessRequest(AccessRequestDto)
+2022-07-27 07:30:57.837 DEBUG 1 --- [http-nio-9000-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class AccessRequestDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did: (truncated)...]
+2022-07-27 07:30:57.838 DEBUG 1 --- [http-nio-9000-exec-7] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofInvitation.enter; got request: class AccessRequestDto {
+    subject: aas-app
+    entity: class ServiceAccessScopeDto {
+        did: didsuper_string
+        scope: scope_string
+    }
+}
+2022-07-27 07:30:57.839 DEBUG 1 --- [http-nio-9000-exec-7] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofInvitation.exit; returning: class AccessResponseDto {
+    subject: aas-app
+    entity: class ServiceAccessScopeDto {
+        did: didsuper_string
+        scope: scope_string
+    }
+    requestId: 63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+    status: pending
+    policyEvaluationResult: null
+    initialAccessToken: null
+}
+2022-07-27 07:30:57.839 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 07:30:57.839 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 07:30:57.839 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:30:57.839 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:30:57.840 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:30:57.840 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:31:19.682 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+2022-07-27 07:31:19.682 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:31:19.683 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:31:19.683 DEBUG 1 --- [http-nio-9000-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a] with attributes [permitAll]
+2022-07-27 07:31:19.683 DEBUG 1 --- [http-nio-9000-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+2022-07-27 07:31:19.683 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a", parameters={}
+2022-07-27 07:31:19.683 DEBUG 1 --- [http-nio-9000-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#getAccessRequest(String)
+2022-07-27 07:31:19.684 DEBUG 1 --- [http-nio-9000-exec-8] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.enter; got request: 63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+2022-07-27 07:31:19.684 DEBUG 1 --- [http-nio-9000-exec-8] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.exit; returning status: pending
+2022-07-27 07:31:19.684 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 07:31:19.685 DEBUG 1 --- [http-nio-9000-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 07:31:19.685 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:19.685 DEBUG 1 --- [http-nio-9000-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:31:19.685 DEBUG 1 --- [http-nio-9000-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:19.685 DEBUG 1 --- [http-nio-9000-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:31:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:31:24.160 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:31:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:31:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:31:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:31:24.160 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:31:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:31:24.161 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@26bfd6a8]
+2022-07-27 07:31:24.161 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:24.162 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:31:24.162 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:24.162 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:31:25.588 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+2022-07-27 07:31:25.589 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:31:25.589 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:31:25.589 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a] with attributes [permitAll]
+2022-07-27 07:31:25.589 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+2022-07-27 07:31:25.589 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/clients/iat/requests/63b6f40a-eab9-49e7-8381-2f3fb4b8178a", parameters={}
+2022-07-27 07:31:25.590 DEBUG 1 --- [http-nio-9000-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to eu.gaiax.difs.aas.generated.controller.IatControllerApiController#getAccessRequest(String)
+2022-07-27 07:31:25.590 DEBUG 1 --- [http-nio-9000-exec-10] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.enter; got request: 63b6f40a-eab9-49e7-8381-2f3fb4b8178a
+2022-07-27 07:31:25.590 DEBUG 1 --- [http-nio-9000-exec-10] eu.gaiax.difs.aas.client.IamClient       : registerIam.enter; got clientName: aas-app, redirectUris: [https://auth-server.gxfs.dev/*]
+2022-07-27 07:31:25.591 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.r.f.client.ExchangeFunctions       : [5af71bab] HTTP POST http://78.138.66.191:8080/realms/gaia-x/clients-registrations/openid-connect
+2022-07-27 07:31:25.594 DEBUG 1 --- [reactor-http-epoll-4] org.springframework.web.HttpLogging      : [5af71bab] Encoding [{grant_types=[authorization_code], redirect_uris=[https://auth-server.gxfs.dev/*], client_name=aas-a (truncated)...]
+2022-07-27 07:31:25.653 DEBUG 1 --- [reactor-http-epoll-4] o.s.w.r.f.client.ExchangeFunctions       : [5af71bab] [5f2ce90f-1] Response 201 CREATED
+2022-07-27 07:31:25.655 DEBUG 1 --- [reactor-http-epoll-4] org.springframework.web.HttpLogging      : [5af71bab] [5f2ce90f-1] Decoded [{redirect_uris=[https://auth-server.gxfs.dev/*], token_endpoint_auth_method=client_secret_basic, gra (truncated)...]
+2022-07-27 07:31:25.655 DEBUG 1 --- [reactor-http-epoll-4] o.s.w.r.f.client.ExchangeFunctions       : [5af71bab] Cancel signal (to close connection)
+2022-07-27 07:31:25.655 DEBUG 1 --- [http-nio-9000-exec-10] eu.gaiax.difs.aas.client.IamClient       : registerIam.exit; returning: 17
+2022-07-27 07:31:25.655 DEBUG 1 --- [http-nio-9000-exec-10] eu.gaiax.difs.aas.service.SsiIatService  : evaluateIatProofResult.exit; returning status: accepted
+2022-07-27 07:31:25.656 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2022-07-27 07:31:25.656 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class AccessResponseDto {<EOL>    subject: aas-app<EOL>    entity: class ServiceAccessScopeDto {<EOL>        did (truncated)...]
+2022-07-27 07:31:25.656 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:25.657 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:31:25.657 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:25.657 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:31:54.159 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:31:54.159 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:31:54.159 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:31:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:31:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:31:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:31:54.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:31:54.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@f6e15c4]
+2022-07-27 07:31:54.161 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:54.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:31:54.162 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:31:54.162 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:32:24.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:32:24.160 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:32:24.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:32:24.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:32:24.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:32:24.160 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:32:24.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:32:24.161 DEBUG 1 --- [http-nio-9000-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1ecbcd23]
+2022-07-27 07:32:24.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:32:24.162 DEBUG 1 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:32:24.162 DEBUG 1 --- [http-nio-9000-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:32:24.162 DEBUG 1 --- [http-nio-9000-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:32:27.639 DEBUG 1 --- [http-nio-9000-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /auth/realms/master/clients-registrations/default
+2022-07-27 07:32:27.639 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:32:27.639 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:32:27.653 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Failed to authorize filter invocation [GET /auth/realms/master/clients-registrations/default] with attributes [authenticated]
+2022-07-27 07:32:27.676 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.w.s.HttpSessionRequestCache        : Saved request https://auth-server.gxfs.dev/auth/realms/master/clients-registrations/default to session
+2022-07-27 07:32:27.677 DEBUG 1 --- [http-nio-9000-exec-4] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://auth-server.gxfs.dev/login
+2022-07-27 07:32:27.677 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2022-07-27 07:32:27.677 DEBUG 1 --- [http-nio-9000-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2022-07-27 07:32:27.677 DEBUG 1 --- [http-nio-9000-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:32:27.748 DEBUG 1 --- [http-nio-9000-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /login
+2022-07-27 07:32:27.748 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:32:27.750 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2022-07-27 07:32:27.750 DEBUG 1 --- [http-nio-9000-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2022-07-27 07:32:27.750 DEBUG 1 --- [http-nio-9000-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:32:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:32:54.159 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:32:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:32:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:32:54.159 DEBUG 1 --- [http-nio-9000-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:32:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:32:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:32:54.160 DEBUG 1 --- [http-nio-9000-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@537c60f2]
+2022-07-27 07:32:54.161 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:32:54.161 DEBUG 1 --- [http-nio-9000-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:32:54.161 DEBUG 1 --- [http-nio-9000-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:32:54.161 DEBUG 1 --- [http-nio-9000-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:33:24.159 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:33:24.159 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:33:24.159 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:33:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:33:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:33:24.160 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:33:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:33:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@50e36e0]
+2022-07-27 07:33:24.161 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:33:24.161 DEBUG 1 --- [http-nio-9000-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:33:24.161 DEBUG 1 --- [http-nio-9000-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:33:24.161 DEBUG 1 --- [http-nio-9000-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:33:54.165 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:33:54.165 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:33:54.165 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:33:54.165 DEBUG 1 --- [http-nio-9000-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:33:54.165 DEBUG 1 --- [http-nio-9000-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:33:54.165 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:33:54.166 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:33:54.166 DEBUG 1 --- [http-nio-9000-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3437a374]
+2022-07-27 07:33:54.166 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:33:54.167 DEBUG 1 --- [http-nio-9000-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:33:54.167 DEBUG 1 --- [http-nio-9000-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:33:54.167 DEBUG 1 --- [http-nio-9000-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:34:24.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:34:24.160 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:34:24.160 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:34:24.161 DEBUG 1 --- [http-nio-9000-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:34:24.162 DEBUG 1 --- [http-nio-9000-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:34:24.163 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:34:24.164 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:34:24.168 DEBUG 1 --- [http-nio-9000-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@170c6b29]
+2022-07-27 07:34:24.168 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:34:24.169 DEBUG 1 --- [http-nio-9000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:34:24.169 DEBUG 1 --- [http-nio-9000-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:34:24.169 DEBUG 1 --- [http-nio-9000-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2022-07-27 07:34:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+2022-07-27 07:34:54.160 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2022-07-27 07:34:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2022-07-27 07:34:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /actuator/health] with attributes [permitAll]
+2022-07-27 07:34:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+2022-07-27 07:34:54.160 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2022-07-27 07:34:54.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/vnd.spring-boot.actuator.v3+json', given [*/*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2022-07-27 07:34:54.161 DEBUG 1 --- [http-nio-9000-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@3251c35d]
+2022-07-27 07:34:54.161 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:34:54.162 DEBUG 1 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-07-27 07:34:54.162 DEBUG 1 --- [http-nio-9000-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2022-07-27 07:34:54.162 DEBUG 1 --- [http-nio-9000-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request

@@ -1,0 +1,12 @@
+name: Docker and Helm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+  
+jobs:
+  dockerbuild:
+    uses: eclipse-xfsc/dev-ops/.github/workflows/dockerbuild.yml@main
+  helm:
+    uses: eclipse-xfsc/dev-ops/.github/workflows/helm.yml@main

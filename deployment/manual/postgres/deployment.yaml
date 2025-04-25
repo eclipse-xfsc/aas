@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aas-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aas-postgres
+  template:
+    metadata:
+      labels:
+        app: aas-postgres
+    spec:
+      containers:
+        - name: aas-postgres
+          image: postgres:15.1
+          env:
+#            - name: SPRING_DATASOURCE_USERNAME
+#              valueFrom:
+#                secretKeyRef:
+#                  name: fc-postgres-pass-secret
+#                  key: username
+#            - name: SPRING_DATASOURCE_PASSWORD
+#              valueFrom:
+#                secretKeyRef:
+#                  name: fc-postgres-pass-secret
+#                  key: password
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: aas-postgres-pass-secret
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: aas-postgres-pass-secret
+                  key: password
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          securityContext:
+            allowPrivilegeEscalation: false 
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: aas-postgres
+      volumes:
+        - name: aas-postgres
+          persistentVolumeClaim:
+            claimName: aas-postgres-claim

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-server
+  labels:
+    app: test-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  template:
+    metadata:
+      labels:
+        app: test-server
+    spec:
+      containers:
+        - name: test-server
+          image: registry.gitlab.com/gaia-x/data-infrastructure-federation-services/authenticationauthorization/auth-app:1.1.0-SNAPSHOT
+          imagePullPolicy: Always
+          env:
+            - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_WEB
+              value: DEBUG
+            - name: LOGGING_LEVEL_EU_GAIAX_DIFS_AAS
+              value: DEBUG
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER_URI 	
+              value: https://key-server.gxfs.dev/realms/gaia-x
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_DEMO_APP_OIDC_CLIENT_SECRET 	
+              value: changeme
+#              valueFrom:
+#                secretKeyRef:
+#                  name: auth-server-keys-secret
+#                  key: iat
+          ports:
+            - name: "http"
+              containerPort: 8990
+
+      restartPolicy: Always

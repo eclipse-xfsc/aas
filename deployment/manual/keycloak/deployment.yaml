@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: key-server
+  labels:
+    app: key-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: key-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+#  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: key-server
+    spec:
+      containers:
+        - name: key-server-image
+          image: quay.io/keycloak/keycloak:20.0.2
+          args:
+            - 'start --auto-build --db postgres --hostname-strict-https false --hostname-strict false --proxy edge --http-enabled true ' #--import-realm '
+            - ' --log-level=DEBUG,io.quarkus:INFO,liquibase:INFO,org.hibernate:INFO,org.infinispan:INFO,org.keycloak.services.scheduled:INFO,org.keycloak.transaction:INFO,io.netty.buffer.PoolThreadCache:INFO,org.keycloak.models.sessions.infinispan:INFO'
+          env:
+            - name: KEYCLOAK_ADMIN
+              valueFrom:
+                secretKeyRef:
+                  name: key-server-pass-secret
+                  key: username
+            - name: KEYCLOAK_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: key-server-pass-secret
+                  key: password
+#            - name: PROXY_ADDRESS_FORWARDING
+#              value: "true"
+            - name: KEYCLOAK_FRONTEND_URL
+              value: https://key-server.gxfs.dev/
+            - name: KEYCLOAK_ADMIN_URL
+              value: https://key-server.gxfs.dev/admin/
+#            - name: KC_PROXY
+#              value: edge
+            - name: KC_DB_URL
+              value: jdbc:postgresql://10.107.255.199:5432/keycloak
+            - name: KC_DB_USERNAME
+              value: postgres
+            - name: KC_DB_PASSWORD
+              value: postgres
+            - name: KC_DB_SCHEMA
+              value: public
+            - name: KC_FEATURES
+              value: preview
+          ports:
+            - name: "http"
+              containerPort: 8080
+            - name: "https"
+              containerPort: 8443
+          readinessProbe:
+            httpGet:
+              path: "/realms/master"
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 3
+          resources: {}
+          volumeMounts:
+            - mountPath: /gaia-x-realm-volume-path
+              name: gaia-x-realm-volume
+
+      restartPolicy: Always
+      serviceAccountName: keycloak
+      serviceAccount: keycloak
+      volumes:
+        - configMap:
+            name: gaia-x-realm-cm
+          name: gaia-x-realm-volume
+#      - "../keycloak/providers:/opt/keycloak/providers"
+#      - "../keycloak/realms_local:/opt/keycloak/data/import"    

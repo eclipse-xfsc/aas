@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: IatProvider
+  description: SSI Client Registration Auth API
+  version: 1.0
+servers:
+  - url: http://localhost:8090
+    description: Local run configuration
+
+tags:
+  - name: IatController
+    description: Controller for SSI IAT issuing
+
+paths:
+  /clients/iat/requests:
+    post:
+      summary: Create IAT provisioning request
+      operationId: postAccessRequest
+      requestBody:
+        description: Request data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/access_request_dto"
+      responses:
+        201:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/access_response_dto"
+        400:
+          description: Invalid input data
+        401:
+          description: Unauthorized
+        500:
+          description: Internal Server Error
+      tags:
+        - IatController
+
+  /clients/iat/requests/{request_id}:
+    parameters:
+      - name: request_id
+        in: path
+        description: Request identifier
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get IAT provisioning request details
+      operationId: getAccessRequest
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/access_response_dto"
+        400:
+          description: Invalid input data
+        401:
+          description: Unauthorized
+        404:
+          description: Request with selected id was not found
+        500:
+          description: Internal Server Error
+      tags:
+        - IatController
+
+components:
+  schemas:
+    access_request_dto:
+      type: object
+      properties:
+        subject:
+          type: string
+        entity:
+          $ref : "#/components/schemas/service_access_scope_dto"
+      required:
+        - subject
+        - entity
+    access_response_dto:
+      allOf:
+        - $ref: "#/components/schemas/access_request_dto"
+        - type: object
+          properties:
+            request_id:
+              type: string
+            status:
+              $ref: "#/components/schemas/access_request_status_dto"
+            policy_evaluation_result:
+              type: object
+            initial_access_token:
+              type: string
+          required:
+            - request_id
+            - status
+    access_request_status_dto:
+      type: string
+      enum:
+        - accepted
+        - rejected
+        - pending
+        - timed-out
+    service_access_scope_dto:
+      type: object
+      properties:
+        did:
+          type: string
+        scope:
+          type: string
+      required:
+        - did
+        - scope

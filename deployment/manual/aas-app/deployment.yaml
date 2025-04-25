@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-server
+  labels:
+    app: auth-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  template:
+    metadata:
+      labels:
+        app: auth-server
+    spec:
+      containers:
+        - name: auth-server
+          image: registry.gitlab.com/gaia-x/data-infrastructure-federation-services/authenticationauthorization/auth-service:1.1.0-SNAPSHOT
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+            - name: AAS_CACHE_TTL
+              value: 3m
+            - name: AAS_TOKEN_TTL
+              value: 3m
+            - name: AAS_IAM_IAT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: auth-server-keys-secret
+                  key: iat
+            - name: AAS_IAM_CLIENTS_OIDC_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: auth-server-oidc-secret
+                  key: password
+            - name: AAS_IAM_CLIENTS_SIOP_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: auth-server-siop-secret
+                  key: password
+            - name: AAS_JWK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: auth-server-keys-secret
+                  key: jwk
+            - name: AAS_TSA_URL
+              value: https://gaiax.vereign.com/tsa/policy
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://10.107.255.199:5432/aas
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: postgres
+            - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY
+              value: DEBUG
+            - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_WEB
+              value: DEBUG
+            - name: LOGGING_LEVEL_EU_GAIAX_DIFS_AAS
+              value: DEBUG
+          ports:
+            - name: "http"
+              containerPort: 9000
+#            - name: "https"
+#              containerPort: 9443
+
+          readinessProbe:
+            httpGet:                 
+              path: "/actuator/health"
+              port: 9000
+            initialDelaySeconds: 60
+            periodSeconds: 30
+
+          resources: {}
+#        terminationMessagePath: /dev/termination-log
+#        terminationMessagePolicy: File
+#      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+#      terminationGracePeriodSeconds: 30

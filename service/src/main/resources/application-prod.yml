@@ -1,0 +1,32 @@
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+        
+spring:
+  datasource:        
+    url: jdbc:postgresql://${PG_HOST:localhost}:${PG_PORT:5432}/${PG_DB:postgres}
+    username: ${PG_USER:postgres}
+    password: ${PG_PASSWORD:postgres}
+    platform: postgresql
+          
+aas:
+  iam:
+    base-uri: https://key-server.gxfs.dev          
+  oidc:
+    issuer: https://auth-server.gxfs.dev
+  tsa:
+    url: https://gaiax.vereign.com/tsa/policy
+    duration: 100000 #100sec
+
+logging:
+  level:
+    root: INFO
+    tsclaims: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    eu.xfsc.aas: INFO

@@ -1,0 +1,78 @@
+server:
+  port: 8180
+spring:
+  application:
+    name: cip-app
+  mvc:
+    log-request-details: true    
+
+keycloak:
+  auth-server-url: http://key-server:8080
+  realm: gaia-x
+  ssl-required: external
+  resource: cip-app
+  credentials:
+    secret: bFzBfFAb51ivFuzk8YjjmoVrETtEloLj
+  principal-attribute: preferred_username
+  bearer-only: false
+  enable-basic-auth: true
+  cors: true
+#  
+  security-constraints:
+    - auth-roles:
+      - "*"
+    - security-collections:
+      - patterns:
+        - /*
+#         
+  policy-enforcer-config:
+    enforcement-mode: ENFORCING
+    lazy-load-paths: true
+    paths:
+      - path: /sso/login
+        enforcement-mode: DISABLED
+        methods:
+          - method: GET
+#
+      - path: /demo
+        enforcement-mode: DISABLED
+        methods:
+          - method: GET
+#
+      - path: /demo/read
+        enforcement-mode: DISABLED
+        scopes:
+          - openid
+          - profile
+        claim-information-point-config:
+          http:
+            method: GET
+            url: http://auth-server:9000/cip/claims
+#            headers:
+#              Authorization: "Basic YWFzLWFwcC1vaWRjOnNlY3JldA=="
+            parameters:
+              usr: "{keycloak.access_token['/sub']}"
+              sub: "{keycloak.access_token['/preferred_username']}"
+              scope: openid profile email
+#
+      - path: /demo/write
+        enforcement-mode: DISABLED
+        claim-information-point-config: 
+          http:
+            method: GET
+            url: http://auth-server:9000/cip/claims
+#            headers:
+#              Authorization: "Bearer {keycloak.access_token}"
+            parameters:
+              usr: "{keycloak.access_token['/sub']}"
+              sub: "{keycloak.access_token['/preferred_username']}"
+              scope: openid
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+    org.keycloak.adapters.OAuthRequestAuthenticator: DEBUG    
+    

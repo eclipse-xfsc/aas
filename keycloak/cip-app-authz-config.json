@@ -1,0 +1,74 @@
+{
+  "allowRemoteResourceManagement": false,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "Read Resource",
+      "ownerManagedAccess": false,
+      "displayName": "Read Resource",
+      "attributes": {},
+      "_id": "c8f3e615-b1d1-453f-bcb0-b77e33ad4985",
+      "uris": [
+        "/demo/read"
+      ]
+    },
+    {
+      "name": "Write Resource",
+      "ownerManagedAccess": false,
+      "displayName": "Write Resource",
+      "attributes": {},
+      "_id": "ebbf51b3-36ba-4bde-8c22-1cde8f32cdd5",
+      "uris": [
+        "/demo/write"
+      ]
+    },
+    {
+      "name": "Demo Resource",
+      "ownerManagedAccess": false,
+      "displayName": "Demo Resource",
+      "attributes": {},
+      "_id": "95d2d0f4-87d3-4c03-b5cb-1a52394551c9",
+      "uris": [
+        "/demo"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "a6c58d19-221a-4bf1-8f86-16959f068aa0",
+      "name": "Default Policy",
+      "description": "A policy that grants access only for users within this realm",
+      "type": "js",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+      }
+    },
+    {
+      "id": "13986fff-5832-4456-9171-0fdb425a77e8",
+      "name": "Default Permission",
+      "description": "A permission that applies to the default resource type",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "defaultResourceType": "urn:cip-app:resources:default",
+        "applyPolicies": "[\"Default Policy\"]"
+      }
+    },
+    {
+      "id": "bd546d36-fa89-4eda-a837-d9d0608533cf",
+      "name": "Read Permission",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"Read Resource\"]",
+        "applyPolicies": "[\"Default Policy\"]"
+      }
+    }
+  ],
+  "scopes": [],
+  "decisionStrategy": "UNANIMOUS"
+}

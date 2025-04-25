@@ -1,0 +1,32 @@
+server:
+  port: 8990
+spring:
+  profiles:
+    active: default
+  application:
+    name: demo-app
+  security:
+    oauth2:
+      client:
+        registration:
+          demo-app-oidc:
+            provider: keycloak
+            client-id: demo-app
+            client-secret: secret
+            scope: 
+              - openid
+              - profile
+        provider:
+          keycloak:
+#          aas-app:
+            issuer-uri: http://key-server:8080/realms/gaia-x
+#            issuer-uri: https://auth-server.gxfs.dev
+#            issuer-uri: http://key-server.gxfs.dev/realms/gaia-x
+#            issuer-uri: https://key-server.gxfs.dev/realms/gaia-x
+
+logging:
+  level:
+    root: INFO
+    eu.xfsc.aas: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG

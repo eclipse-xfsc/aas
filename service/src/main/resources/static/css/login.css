@@ -1,0 +1,475 @@
+html {
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 0.25px;
+    height: 1vh;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hide {
+    display: none;
+}
+
+.modal-content {
+    width: 634px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 16px 24px 36px 24px;
+    border-radius: 4px;
+}
+
+.modal-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.25px;
+    text-align: left;
+}
+
+.modal-message {
+    margin-top: 0;
+    padding-top: 36px;
+    inline-size: 366px;
+    overflow-wrap: break-word;
+    font-size: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: #4B4B4B;
+}
+
+.modal-button {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+    width: 125px;
+    height: 33px;
+    text-align: center;
+    gap: 8px;
+    color: #000094;
+    background-color: #FFFFFF;
+    border: 2.5px solid #000094;
+    border-radius: 5px;
+}
+
+.modal-button:hover {
+    color: #000094;
+    background-color: #FFFFFF;
+}
+
+.modal-divider {
+    width: 100%;
+    border-top: 0px solid #E8E8E8;
+    margin: 0;
+}
+
+.logo-header {
+    fill: red;
+}
+
+header {
+    margin: 0 auto;
+    width: 100%;
+    border-top: 4px solid;
+    border-top-color: #000094;
+    border-bottom: 1px solid;
+    border-bottom-color: #E8E8E8;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+}
+
+.navigation-bar {
+    margin: auto;
+    padding: 14px 15px 8px 15px;
+    max-width: 980px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation-links {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.navigation-link {
+    padding: 0 16px;
+    white-space: nowrap;
+}
+
+.mobile-header {
+    display: none;
+}
+
+body {
+    margin: auto;
+    height: 1vh;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-message {
+    position: absolute;
+    margin-top: 0;
+    top: 15px;
+    left: 15px;
+    padding: 10px 18px;
+    color: #ef6351;
+    background-color: #FFFFFF;
+    border: 2.5px solid #ef6351;
+    border-radius: 5px;
+    box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13);
+    animation: fade 6s linear forwards;
+}
+
+.logo-gaia-full {
+    margin-left: 16.67%;
+    margin-top: 14px;
+    padding: 0;
+    height: 59px;
+    width: 116.11px;
+}
+
+
+.card {
+    margin: 80px 0;
+    width: 635px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0.1rem 0.1875rem 0.475rem 0.1875rem rgba(3, 3, 3, 0.05);
+    border-radius: 4px 4px 4px 4px;
+}
+
+.card-top {
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-top h1 {
+    margin-bottom: 0;
+}
+
+.card-top p {
+    margin-top: 0;
+    font-weight: 700;
+    color: #818C99;
+}
+
+.card-divider {
+    width: 95%;
+    border-top: 0px solid #E8E8E8;
+}
+
+
+.card-bottom {
+    color: black;
+    width: 100%;
+}
+
+.card-bottom-contents {
+    margin: auto;
+    padding-top: 5px;
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.locale-list {
+    margin-top: 0px;
+    padding-left: 0px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    text-align: right;
+    background-color: white;
+    box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13);
+}
+
+.language-component {
+    margin-left: auto;
+}
+
+.display-language-component {
+    text-decoration: underline;
+}
+
+.display-language-component:hover {
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.1px;
+    text-decoration-color: #737679;
+    cursor: pointer;
+}
+
+.language-component:hover .locale-list {
+    display: block;
+}
+
+.locale {
+    padding: 10px 10px 10px 20px;
+}
+
+.locale:hover {
+    background-color: #EDEDED;
+    cursor: pointer;
+}
+
+
+h1 {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+
+img {
+    margin: auto;
+    display: block;
+    border: 1px solid #E8E8E8;
+    max-width: 100%;
+}
+
+table {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.table-element {
+    margin: 100px;
+}
+
+
+.label, .input-box, .action_button {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
+}
+
+
+.action_button {
+    margin: 8px 16px 8px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    width: 240px;
+    height: 33px;
+    text-align: center;
+    gap: 8px;
+    color: #000094;
+    background-color: #FFFFFF;
+    border: 2.5px solid #000094;
+    border-radius: 5px;
+}
+
+
+.action_button:hover, .modal-button:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #000094;
+}
+
+#back-to-standard-login-button {
+    color: black;
+    background: #E8E8E8;
+    border-style: solid;
+    border: 2.5px solid #E8E8E8;
+}
+
+#back-to-standard-login-button:hover {
+    background: #c9c9c9;
+    border: 2.5px solid #c9c9c9;
+}
+
+.account-registration {
+    margin-top: 8px;
+}
+
+.account-registration, .account-registration-link {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+.account-registration-link {
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 40px;
+}
+
+footer {
+    margin: auto;
+    width: 100%;
+    background-color: #000094;
+    color: #FFFFFF;
+}
+
+
+.footer-top, .footer-bottom {
+    margin: auto;
+    max-width: 960px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.footer-top {
+    padding: 24px 15px 12px 15px;
+    margin-bottom: 0;
+}
+
+.footer-bottom {
+    padding: 21px 15px 31px 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer-divider {
+    margin: 0 auto;
+    border-color: #737373
+}
+
+.footer-salutation {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.copyright {
+    font-weight: 700;
+}
+
+.bottom-nav-bar a {
+    font-weight: 400;
+    margin-left: 24px;
+}
+
+.copyright, .bottom-nav-bar {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.footer-end-of-page p {
+    text-align: center;
+    background-color: #0C1B5A;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    margin: 0;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 1
+    }
+    75% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        margin: 0 0 0 0;
+    }
+
+    main {
+        margin: auto;
+        width: 100%;
+    }
+
+    .card {
+        margin: 0;
+        width: auto;
+        border-top: none;
+        box-shadow: none;
+    }
+
+    .card-top {
+        display: none
+    }
+
+    .card-bottom {
+        margin: 0;
+        width: 100%;
+        border-top: none;
+        box-shadow: none;
+    }
+
+    .card-contents {
+        margin: auto;
+        width: 94%;
+        padding-top: 5px;
+    }
+
+    .card-divider {
+        display: none;
+    }
+
+    .navigation-links {
+        display: none;
+    }
+
+    .mobile-header {
+        display: block;
+        white-space: nowrap;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .modal-content {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .modal-button {
+        float: right;
+    }
+}

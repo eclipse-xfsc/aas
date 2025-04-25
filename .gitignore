@@ -1,0 +1,12 @@
+.idea/
+*/target/**
+*.iml
+*.log
+*.editorconfig
+
+# Eclipse
+.classpath
+.project
+.settings/
+.DS_Store
+*.log.zip
