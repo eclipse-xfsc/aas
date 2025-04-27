@@ -13,3 +13,5 @@ jobs:
       deploy_mode: 'jar'
   helm:
     uses: eclipse-xfsc/dev-ops/.github/workflows/helm.yml@main
+    with:
+      buildContext:  "deployment/helm"
