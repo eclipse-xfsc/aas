@@ -6,5 +6,7 @@ on:
   workflow_dispatch:
   
 jobs:
+  dockerbuild:
+    uses: eclipse-xfsc/dev-ops/.github/workflows/docker-maven.yml@main
   helm:
     uses: eclipse-xfsc/dev-ops/.github/workflows/helm.yml@main
