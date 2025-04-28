@@ -8,10 +8,12 @@ on:
 jobs:
   dockerbuild:
     uses: eclipse-xfsc/dev-ops/.github/workflows/docker-maven.yml@main
+    secrets: inherit
     with:
       java_version: '18'
       deploy_mode: 'jar'
   helm:
     uses: eclipse-xfsc/dev-ops/.github/workflows/helm.yml@main
+    secrets: inherit
     with:
       buildContext:  "deployment/helm"
