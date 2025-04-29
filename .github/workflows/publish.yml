@@ -11,7 +11,7 @@ jobs:
     secrets: inherit
     with:
       java_version: '18'
-      deploy_mode: 'jar'
+      deploy_mode: 'jib'
   helm:
     uses: eclipse-xfsc/dev-ops/.github/workflows/helm.yml@main
     secrets: inherit
