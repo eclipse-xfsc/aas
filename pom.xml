@@ -37,7 +37,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- dependencies -->
-        <spring-boot.version>3.1.2</spring-boot.version>
+        <spring-boot.version>3.4.5</spring-boot.version>
         <spring.security.version>6.1.2</spring.security.version>
         <spring.auth-server.version>1.1.2</spring.auth-server.version>
         <springdoc.version>2.2.0</springdoc.version>
